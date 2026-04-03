@@ -184,7 +184,7 @@ export const experiences = [
     date: "2026 - Present",
     contents: [
       "Built a complete website from scratch for Ganesh Maths Academy, including design and SEO optimization",
-      "Developed a WordPress website for JTAC Media in collaboration with the business owner",
+      "Developed a WordPress website worked on Ui and Plugins for JTAC Media in collaboration with the business owner",
       "Delivered responsive, user-friendly websites tailored to client requirements",
     ],
   },
