@@ -11,7 +11,7 @@ const Experience = () => {
       id="work"
       className={`w-full scroll-reveal-scale ${isVisible ? 'visible' : ''}`}
     >
-        <Timeline data={experiences}/>
+      <Timeline data={experiences} />
     </div>
   )
 }

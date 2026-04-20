@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap");
 @import "tailwindcss";
+
 @theme {
   --color-primary: #030412;
   --color-midnight: #06091f;
@@ -15,17 +16,17 @@
   --color-sand: #d6995c;
   --color-coral: #ea4884;
   --animate-orbit: orbit 50s linear infinite;
+
   @keyframes orbit {
     0% {
-      transform: rotate(calc(var(--angle) * 1deg))
-        translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
+      transform: rotate(calc(var(--angle) * 1deg)) translateY(calc(var(--radius) * 1px)) rotate(calc(var(--angle) * -1deg));
     }
+
     100% {
-      transform: rotate(calc(var(--angle) * 1deg + 360deg))
-        translateY(calc(var(--radius) * 1px))
-        rotate(calc((var(--angle) * -1deg) - 360deg));
+      transform: rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg));
     }
   }
+
   --animate-marquee: marquee 50s linear infinite;
   --animate-marquee-vertical: marquee-vertical 50s linear infinite;
 
@@ -33,6 +34,7 @@
     from {
       transform: translateX(0);
     }
+
     to {
       transform: translateX(calc(-100% - var(--gap)));
     }
@@ -42,11 +44,13 @@
     from {
       transform: translateY(0);
     }
+
     to {
       transform: translateY(calc(-100% - var(--gap)));
     }
   }
 }
+
 @layer base {
   body {
     background: #030412;
@@ -58,12 +62,13 @@
 }
 
 @layer components {
+
   /* Scroll Reveal Animations */
   .scroll-reveal {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .scroll-reveal.visible {
@@ -84,7 +89,7 @@
     opacity: 0;
     transform: translateX(-50px);
     transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .scroll-reveal-left.visible {
@@ -96,7 +101,7 @@
     opacity: 0;
     transform: translateX(50px);
     transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .scroll-reveal-right.visible {
@@ -108,7 +113,7 @@
     opacity: 0;
     transform: scale(0.9);
     transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
-                transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
   .scroll-reveal-scale.visible {
