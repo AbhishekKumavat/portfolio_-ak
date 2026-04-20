@@ -29,7 +29,7 @@ export const Timeline = ({ data }) => {
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start pt-4 md:pt-40 md:gap-10"
+            className="flex justify-start pt-10 md:pt-40 md:gap-10"
           >
             <div className="flex flex-col md:flex-row items-start md:gap-10">
               {/* Marker and Title (Sticky on Desktop only) */}
