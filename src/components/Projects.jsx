@@ -19,7 +19,7 @@ const Projects = ({
     <>
       <div
         ref={projectRef}
-        className={`flex-wrap items-center justify-between py-10 space-y-14 sm:flex sm:space-y-0 scroll-reveal ${isVisible ? 'visible' : ''}`}
+        className={`flex items-center justify-between py-6 gap-4 scroll-reveal ${isVisible ? 'visible' : ''}`}
         style={{ transitionDelay: `${index * 0.1}s` }}
         onMouseEnter={() => setPreview(image)}
         onMouseLeave={() => setPreview(null)}

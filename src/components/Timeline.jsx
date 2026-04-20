@@ -29,31 +29,31 @@ export const Timeline = ({ data }) => {
         {data.map((item, index) => (
           <div
             key={index}
-            className="flex justify-start pt-10 md:pt-40 md:gap-10"
+            className="flex justify-start pt-4 md:pt-40 md:gap-10"
           >
-            <div className="sticky flex flex-col md:flex-row z-40 items-center top-40 self-start max-w-xs lg:max-w-sm md:w-full">
-              <div className="h-10 absolute -left-[15px] w-10 rounded-full bg-midnight flex items-center justify-center">
-                <div className="h-4 w-4 rounded-full bg-neutral-800 border dark:border-neutral-700 p-2" />
+            <div className="flex flex-col md:flex-row items-start md:gap-10">
+              {/* Marker and Title (Sticky on Desktop only) */}
+              <div className="md:sticky md:top-40 z-40 flex items-start md:items-center w-full md:max-w-xs lg:max-w-sm">
+                {/* Dot */}
+                <div className="h-10 absolute -left-[15px] w-10 rounded-full bg-midnight flex items-center justify-center">
+                  <div className="h-4 w-4 rounded-full bg-neutral-800 border dark:border-neutral-700 p-2" />
+                </div>
+                {/* Title and Date Block */}
+                <div className="flex flex-col gap-1 pl-8 md:pl-20 text-neutral-500 w-full mb-4 md:mb-0">
+                  <h3 className="text-xl md:text-4xl font-bold text-white/90">{item.date}</h3>
+                  <h3 className="text-lg md:text-3xl text-lavender font-semibold">{item.title}</h3>
+                  <h3 className="text-lg md:text-2xl text-neutral-400">{item.job}</h3>
+                </div>
               </div>
-              {/* Desktop View */}
-              <div className="flex-col hidden gap-2 text-xl font-bold md:flex md:pl-20 md:text-4xl text-neutral-500">
-                <h3>{item.date}</h3>
-                <h3 className="text-3xl text-neutral-400">{item.title}</h3>
-                <h3 className="text-3xl text-neutral-500">{item.job}</h3>
-              </div>
-            </div>
 
-            {/* Mobile View */}
-            <div className="relative w-full pl-20 pr-4 md:pl-4">
-              <div className="block mb-4 text-2xl font-bold text-left text-neutral-300 md:hidden ">
-                <h3>{item.date}</h3>
-                <h3>{item.job}</h3>
+              {/* Content Block */}
+              <div className="relative w-full pl-8 md:pl-4 mt-4 md:mt-0">
+                {item.contents.map((content, index) => (
+                  <p className="mb-3 text-sm md:text-base font-normal text-neutral-400 max-w-2xl" key={index}>
+                    {content}
+                  </p>
+                ))}
               </div>
-              {item.contents.map((content, index) => (
-                <p className="mb-3 font-normal text-neutral-400" key={index}>
-                  {content}
-                </p>
-              ))}
             </div>
           </div>
         ))}
