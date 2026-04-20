@@ -19,7 +19,7 @@ const Projects = ({
     <>
       <div
         ref={projectRef}
-        className={`flex items-center justify-between py-6 gap-4 scroll-reveal ${isVisible ? 'visible' : ''}`}
+        className={`flex flex-col md:flex-row items-start md:items-center justify-between py-6 gap-4 scroll-reveal ${isVisible ? 'visible' : ''}`}
         style={{ transitionDelay: `${index * 0.1}s` }}
         onMouseEnter={() => setPreview(image)}
         onMouseLeave={() => setPreview(null)}
@@ -37,7 +37,7 @@ const Projects = ({
             setIsHidden(true);
             setPreview(null);
           }}
-          className="flex items-center gap-1 cursor-pointer hover-animation"
+          className="flex items-center gap-1 cursor-pointer hover-animation mt-3 md:mt-0"
         >
           Read More
           <img src="assets/arrow-right.svg" className="w-5" />
