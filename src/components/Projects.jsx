@@ -33,7 +33,10 @@ const Projects = ({
           </div>
         </div>
         <button
-          onClick={() => setIsHidden(true)}
+          onClick={() => {
+            setIsHidden(true);
+            setPreview(null);
+          }}
           className="flex items-center gap-1 cursor-pointer hover-animation"
         >
           Read More

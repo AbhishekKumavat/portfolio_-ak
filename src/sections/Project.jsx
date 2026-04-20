@@ -22,16 +22,15 @@ const Project = () => {
 
   return (
     <section
-      onClick={handleMouseMove}
+      onMouseMove={handleMouseMove}
       className="relative c-space section-spacing"
       id="projects"
     >
       <h2 className="text-heading">My Selected Projects</h2>
       <div
         ref={sectionRef}
-        className={`bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full scroll-reveal-fade ${
-          isVisible ? "visible" : ""
-        }`}
+        className={`bg-gradient-to-r from-transparent via-neutral-700 to-transparent mt-12 h-[1px] w-full scroll-reveal-fade ${isVisible ? "visible" : ""
+          }`}
       />
       {myProjects.map((project, index) => (
         <Projects
@@ -41,15 +40,17 @@ const Project = () => {
           index={index}
         />
       ))}
-      {preview && (
-        <motion.img
-          className="fixed top-0 left-0 z-50 object-cover 
-      h-56 rounded-lg shadow-lg 
-      pointer-events-auto w-80"
-          src={preview}
-          style={{ x: springX, y: springY }}
-        />
-      )}
+      <div className="hidden md:block">
+        {preview && (
+          <motion.img
+            className="fixed top-0 left-0 z-50 object-cover 
+        h-56 rounded-lg shadow-lg 
+        pointer-events-none w-80"
+            src={preview}
+            style={{ x: springX, y: springY }}
+          />
+        )}
+      </div>
     </section>
   );
 };
